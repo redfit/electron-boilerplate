@@ -1,0 +1,57 @@
+{
+  "name": "electron-boilerplate",
+  "version": "0.0.1",
+  "productName": "Hello World",
+  "description": "electron-boilerplate",
+  "author": "redift",
+  "private": true,
+  "dependencies": {
+    "cross-env": "^5.0.1",
+    "electron-is-dev": "^0.2.0",
+    "electron-updater": "^2.7.1",
+    "node-notifier": "^5.1.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "build": {
+    "appId": "com.redfit.HelloWorld",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "publish": {
+      "provider": "github"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "devtron": "^1.4.0",
+    "electron": "^1.6.11",
+    "electron-builder": "^19.16.0",
+    "electron-devtools-installer": "^2.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "react-scripts": "1.0.10",
+    "wait-on": "^2.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/electron.js",
+    "electron-release": "build --em.main=build/electron.js --publish=always",
+    "preelectron-pack": "yarn build",
+    "preelectron-release": "yarn build"
+  }
+}

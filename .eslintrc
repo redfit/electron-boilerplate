@@ -1,0 +1,10 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "rules": {
+    "comma-dangle": "off",
+    "comma-style": "off",
+    "no-console": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "semi": "off"
+  }
+}
