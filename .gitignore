@@ -9,6 +9,7 @@
 # production
 /build
 /dist
+/flow-typed
 
 # misc
 .DS_Store
